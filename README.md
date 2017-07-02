@@ -1,8 +1,8 @@
 # redux-reducer-async
 
 Create redux reducers for async behaviors of multiple actions.
-
-Manages properties on state for loading, success, and error cases.
+Be DRY & reduce boilerplate.
+Standardize state schema with managed properties for loading, success, and error cases.
 
 By default, we support the conventions of [`redux-promise-middleware`][redux-promise-middleware] and [FSA].
 
