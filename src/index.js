@@ -34,9 +34,11 @@ export function finalActionType (type) {
 }
 
 export function actionTypes (type, loading, success, error) {
+  /* eslint-disable no-unneeded-ternary */
   loading = loading == null ? '_PENDING' : loading ? loading : ''
   success = success == null ? '_FULFILLED' : success ? success : ''
   error = error == null ? '_REJECTED' : error ? error : ''
+  /* eslint-enable no-unneeded-ternary */
   return {
     loading: `${type}${loading}`,
     success: `${type}${success}`,
