@@ -33,11 +33,14 @@ export function finalActionType (type) {
   }
 }
 
-export function actionTypes (type, loading = '_PENDING', success = '_FULFILLED', error = '_REJECTED') {
+export function actionTypes (type, loading, success, error) {
+  loading = loading == null ? '_PENDING' : loading ? loading : ''
+  success = success == null ? '_FULFILLED' : success ? success : ''
+  error = error == null ? '_REJECTED' : error ? error : ''
   return {
-    loading: loading !== null ? `${type}${loading}` : type,
-    success: success !== null ? `${type}${success}` : type,
-    error: error !== null ? `${type}${error}` : type
+    loading: `${type}${loading}`,
+    success: `${type}${success}`,
+    error: `${type}${error}`
   }
 }
 

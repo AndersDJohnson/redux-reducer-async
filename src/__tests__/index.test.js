@@ -229,15 +229,29 @@ describe('createReducer', () => {
 })
 
 describe('actionTypes', () => {
-  it('should default suffixes', () => {
+  it('should default suffixes when not passed', () => {
     expect(actionTypes('MY_ACTION', '_LOADING')).toEqual({
       loading: 'MY_ACTION_LOADING',
       success: 'MY_ACTION_FULFILLED',
       error: 'MY_ACTION_REJECTED'
     })
   })
-  it('should suppress suffix on empty', () => {
+  it('should default suffixes on null or undefined', () => {
+    expect(actionTypes('MY_ACTION', '_LOADING', undefined, null)).toEqual({
+      loading: 'MY_ACTION_LOADING',
+      success: 'MY_ACTION_FULFILLED',
+      error: 'MY_ACTION_REJECTED'
+    })
+  })
+  it('should suppress suffix on empty string', () => {
     expect(actionTypes('MY_ACTION', undefined, '', '')).toEqual({
+      loading: 'MY_ACTION_PENDING',
+      success: 'MY_ACTION',
+      error: 'MY_ACTION'
+    })
+  })
+  it('should suppress suffix on falsy', () => {
+    expect(actionTypes('MY_ACTION', undefined, false, 0)).toEqual({
       loading: 'MY_ACTION_PENDING',
       success: 'MY_ACTION',
       error: 'MY_ACTION'
