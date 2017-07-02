@@ -23,7 +23,7 @@
     "webpack": "^3.0.0"
   },
   "author": "Anders D. Johnson (https://andrz.me)",
-  "repo": "AndersDJohnson/redux-reducer-async",
+  "repository": "AndersDJohnson/redux-reducer-async",
   "license": "MIT",
   "description": "Create redux reducers for async behaviors of multiple actions.",
   "keywords": [
