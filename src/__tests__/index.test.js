@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import createReducer, { actionTypes, finalActionType } from '.'
+import createReducer, { actionTypes, finalActionType } from '..'
 
 describe('createReducer', () => {
   const type = 'MY_ACTION'
