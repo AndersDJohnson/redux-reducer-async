@@ -4,7 +4,7 @@ Create redux reducers for async behaviors of multiple actions.
 
 Manages properties on state for loading, success, and error cases.
 
-By default, we support the conventions of [`redux-promise-middleware`] and [FSA].
+By default, we support the conventions of [`redux-promise-middleware`][redux-promise-middleware] and [FSA].
 
 So this:
 
@@ -31,7 +31,7 @@ results in a reducer like this:
 }
 ```
 
-To support [`redux-promise`], which uses same the action type for success and error cases,
+To support [`redux-promise`][redux-promise], which uses same the action type for success and error cases,
 you can use `finalActionType`:
 
 ```js
@@ -50,7 +50,7 @@ createReducer({
 })
 ```
 
-You can provide custom keys (all optional) for each case to be used on the state:
+You can provide custom property names (all optional) for each case to be used on the state:
 
 ```js
 createReducer('MY_ACTION', {
@@ -60,7 +60,7 @@ createReducer('MY_ACTION', {
 })
 ```
 
-Or custom reducer functions (again all optional):
+Or custom reducer functions (again all optional, but be careful to define all cases if you use non-standard property names in one):
 
 ```js
 createReducer('MY_ACTION', {
@@ -69,7 +69,7 @@ createReducer('MY_ACTION', {
     myActionError: null,
     myActionIsLoading: true,
     extra: 'whatever'
-  }),
+  })
   // success, error...
 })
 ```
@@ -82,7 +82,7 @@ createReducer('MY_ACTION', {
   error: (state, action) => ({
     ...state,
     isLoading: false,
-    myError: action.payload,
+    error: action.payload,
     also: 'etc'
   })
 })
