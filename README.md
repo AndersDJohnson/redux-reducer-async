@@ -31,25 +31,6 @@ results in a reducer like this:
 }
 ```
 
-To support [`redux-promise`][redux-promise], which uses same the action type for success and error cases,
-you can use `finalActionType`:
-
-```js
-import createReducer, { finalActionType } from 'redux-reducer-async'
-
-createReducer(finalActionType('MY_ACTION'))
-```
-
-which is effectively like providing custom action types:
-
-```js
-createReducer({
-  loading: 'MY_ACTION_PENDING',
-  success: 'MY_ACTION',
-  error: 'MY_ACTION'
-})
-```
-
 You can provide custom property names (all optional) for each case to be used on the state:
 
 ```js
@@ -87,6 +68,41 @@ createReducer('MY_ACTION', {
   })
 })
 ```
+
+To support [`redux-promise`][redux-promise], which uses same the action type for success and error cases,
+you can use `finalActionType`:
+
+```js
+import createReducer, { finalActionType } from 'redux-reducer-async'
+
+createReducer(finalActionType('MY_ACTION'))
+```
+
+which is effectively like providing custom action types:
+
+```js
+createReducer({
+  loading: 'MY_ACTION_PENDING',
+  success: 'MY_ACTION',
+  error: 'MY_ACTION'
+})
+```
+
+Or similarly by passing suffixes to the `actionTypes` helper, 
+which is normally used to explicitly default all types:
+
+```js
+import createReducer, { actionTypes } from 'redux-reducer-async'
+
+createReducer(actionTypes('MY_ACTION', '_LOADING', '_SUCCESS', '_ERROR'))
+```
+
+But can also be used to suppress suffixes (here undefined means use default):
+
+```js
+createReducer(actionTypes('MY_ACTION', undefined, '', ''))
+```
+
 
 [redux-promise-middleware]: https://github.com/pburtchaell/redux-promise-middleware
 [redux-promise]: https://github.com/acdlite/redux-promise
