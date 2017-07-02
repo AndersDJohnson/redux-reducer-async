@@ -67,13 +67,13 @@ export default function createReducer (types, handlers, initialState = {}) {
   return (state = initialState, action = {}) => {
     switch (action.type) {
       case `${usedTypes.loading}`:
-        return usedHandlers.loading ? usedHandlers.loading(state, action) : state
+        return usedHandlers.loading(state, action)
       case `${usedTypes.success}`:
       case `${usedTypes.error}`:
         if (action.error) {
-          return usedHandlers.error ? usedHandlers.error(state, action) : state
+          return usedHandlers.error(state, action)
         }
-        return usedHandlers.success ? usedHandlers.success(state, action) : state
+        return usedHandlers.success(state, action)
       default:
         return state
     }

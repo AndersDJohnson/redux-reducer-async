@@ -229,9 +229,23 @@ describe('createReducer', () => {
 })
 
 describe('actionTypes', () => {
-  it('should default suffixes when not passed', () => {
+  it('should default suffixes when all are not passed', () => {
+    expect(actionTypes('MY_ACTION')).toEqual({
+      loading: 'MY_ACTION_PENDING',
+      success: 'MY_ACTION_FULFILLED',
+      error: 'MY_ACTION_REJECTED'
+    })
+  })
+  it('should default suffixes when some are not passed', () => {
     expect(actionTypes('MY_ACTION', '_LOADING')).toEqual({
       loading: 'MY_ACTION_LOADING',
+      success: 'MY_ACTION_FULFILLED',
+      error: 'MY_ACTION_REJECTED'
+    })
+  })
+  it('should default suffixes when some are falsy', () => {
+    expect(actionTypes('MY_ACTION', 0)).toEqual({
+      loading: 'MY_ACTION',
       success: 'MY_ACTION_FULFILLED',
       error: 'MY_ACTION_REJECTED'
     })
