@@ -198,7 +198,7 @@ describe('createReducer', () => {
     const types = actionTypes(type)
     const reducer = createReducer(type, {
       loading: 'myLoading',
-      success: state => ({ ...state, mySuccess: true, myError: false }),
+      success: state => ({ ...state, mySuccess: true, myError: false })
     })
 
     it('should set loading', () => {
@@ -209,8 +209,10 @@ describe('createReducer', () => {
     })
 
     it('should set success', () => {
-      expect(reducer({ foo: 'bar'},
-        { type: types.success, payload })).toEqual({
+      expect(reducer(
+        { foo: 'bar' },
+        { type: types.success, payload })
+      ).toEqual({
         mySuccess: true,
         myError: false,
         foo: 'bar'
