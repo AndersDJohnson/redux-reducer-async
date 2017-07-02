@@ -1,10 +1,10 @@
 {
   "name": "redux-reducer-async",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "prepublish": "yarn build",
+    "prepublish": "yarn test && yarn build",
     "test": "eslint src && jest"
   },
   "devDependencies": {
