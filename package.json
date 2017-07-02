@@ -1,10 +1,10 @@
 {
   "name": "redux-reducer-async",
-  "description": "Create redux reducers for async behaviors of multiple actions.",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "webpack",
+    "prepublish": "yarn build",
     "test": "eslint src && jest"
   },
   "devDependencies": {
@@ -21,5 +21,22 @@
     "jest": "^20.0.4",
     "standard": "^10.0.2",
     "webpack": "^3.0.0"
-  }
+  },
+  "author": "Anders D. Johnson (https://andrz.me)",
+  "repo": "AndersDJohnson/redux-reducer-async",
+  "license": "MIT",
+  "description": "Create redux reducers for async behaviors of multiple actions.",
+  "keywords": [
+    "redux",
+    "flux",
+    "reducer",
+    "async",
+    "promises",
+    "redux-promise",
+    "redux-promise-middleware",
+    "actions",
+    "flux standard actions",
+    "FSA",
+    "react"
+  ]
 }
