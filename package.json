@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack",
     "prepublish": "yarn test && yarn build",
+    "precommit": "yarn test",
     "test": "eslint src && jest --coverage && codecov"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
     "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.2",
     "jest": "^20.0.4",
     "webpack": "^3.0.0"
   },
