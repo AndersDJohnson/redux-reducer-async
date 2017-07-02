@@ -3,6 +3,7 @@
 
 [![npm](https://img.shields.io/npm/v/redux-reducer-async.svg)](https://npmjs.com/package/redux-reducer-async) 
 [![Travis CI](https://img.shields.io/travis/AndersDJohnson/redux-reducer-async.svg)](https://travis-ci.org/AndersDJohnson/redux-reducer-async)
+[![Codecov](https://img.shields.io/codecov/c/github/AndersDJohnson/redux-reducer-async.svg)](https://codecov.io/gh/AndersDJohnson/redux-reducer-async)
 
 Be DRY & reduce boilerplate.
 Standardize state schema with managed properties for loading, success, and error cases.
