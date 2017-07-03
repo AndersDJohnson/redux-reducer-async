@@ -27,7 +27,7 @@ results in a reducer like this:
       return { ...state, loading: true }
     case 'MY_ACTION_FULFILLED':
       return { ...state, loading: false, error: null, data: action.payload }
-    case 'MY_ACTION_PENDING':
+    case 'MY_ACTION_REJECTED':
       return { ...state, loading: false, error: action.payload }
     default:
       return state
