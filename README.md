@@ -24,7 +24,7 @@ results in a reducer like this:
 (state = {}, action = {}) => {
   switch (action.type) {
     case 'MY_ACTION_PENDING':
-      return { ...state, loading: true }
+      return { ...state, loading: true, error: null }
     case 'MY_ACTION_FULFILLED':
       return { ...state, loading: false, error: null, data: action.payload }
     case 'MY_ACTION_REJECTED':
