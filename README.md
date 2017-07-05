@@ -93,7 +93,7 @@ createReducer({
 ```
 
 Or similarly by passing suffixes to the `actionTypes` helper, 
-which is normally used to explicitly default all types:
+which is normally used to explicitly define all types:
 
 ```js
 import createReducer, { actionTypes } from 'redux-reducer-async'
