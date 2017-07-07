@@ -1,7 +1,7 @@
 # redux-reducer-async
 > Create redux reducers for async behaviors of multiple actions.
 
-[![npm](https://img.shields.io/npm/v/redux-reducer-async.svg)](https://npmjs.com/package/redux-reducer-async) 
+[![npm](https://img.shields.io/npm/v/redux-reducer-async.svg)](https://npmjs.com/package/redux-reducer-async)
 [![Travis CI](https://img.shields.io/travis/AndersDJohnson/redux-reducer-async.svg)](https://travis-ci.org/AndersDJohnson/redux-reducer-async)
 [![Codecov](https://img.shields.io/codecov/c/github/AndersDJohnson/redux-reducer-async.svg)](https://codecov.io/gh/AndersDJohnson/redux-reducer-async)
 
@@ -35,6 +35,8 @@ results in a reducer like this:
 }
 ```
 
+### Custom Properties
+
 You can provide custom property names (all optional) for each case to be used on the state:
 
 ```js
@@ -45,7 +47,9 @@ createReducer('MY_ACTION', {
 })
 ```
 
-Or custom reducer functions (again all optional, but be careful to define all cases if you use non-standard property names in one):
+### Custom Reducers
+
+You can also provide custom reducer functions (again all optional, but be careful to define all cases if you use non-standard property names in one):
 
 ```js
 createReducer('MY_ACTION', {
@@ -59,7 +63,7 @@ createReducer('MY_ACTION', {
 })
 ```
 
-And you can even mix these:
+And you can even mix these with custom properties:
 
 ```js
 createReducer('MY_ACTION', {
@@ -73,7 +77,11 @@ createReducer('MY_ACTION', {
 })
 ```
 
-To support [`redux-promise`][redux-promise], which uses same the action type for success and error cases,
+### Custom Action Types
+
+You can provide custom action types.
+
+For example, to support [`redux-promise`][redux-promise], which uses same the action type for success and error cases (though it does not provide a loading action),
 you can use `finalActionType`:
 
 ```js
@@ -92,7 +100,7 @@ createReducer({
 })
 ```
 
-Or similarly by passing suffixes to the `actionTypes` helper, 
+Or similarly by passing suffixes to the `actionTypes` helper,
 which is normally used to explicitly define all types:
 
 ```js
