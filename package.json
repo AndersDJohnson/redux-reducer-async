@@ -4,9 +4,14 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint src",
     "prepublish": "yarn test && yarn build",
     "precommit": "yarn test",
-    "test": "eslint src && jest --coverage && codecov"
+    "test": "yarn lint && yarn unit && codecov",
+    "unit": "jest --coverage"
+  },
+  "jest": {
+    "testMatch": [ "**/?(*.)(spec|test).js?(x)" ]
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

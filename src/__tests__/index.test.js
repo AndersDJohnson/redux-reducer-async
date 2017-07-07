@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import createReducer, { actionTypes, finalActionType } from '..'
 
 describe('createReducer', () => {
