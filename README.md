@@ -51,6 +51,7 @@ createReducer('MY_ACTION', {
 
 You can also provide custom reducer functions (again all optional, but be careful to define all cases if you use non-standard property names in one):
 
+<!-- global createReducer -->
 ```js
 createReducer('MY_ACTION', {
   loading: state => ({
@@ -65,6 +66,7 @@ createReducer('MY_ACTION', {
 
 And you can even mix these with custom properties:
 
+<!-- global createReducer -->
 ```js
 createReducer('MY_ACTION', {
   loading: 'isLoading',
@@ -122,7 +124,7 @@ As a shortcut to defining custom reducers, you can provide transform functions t
 ```js
 createReducer('MY_ACTION', {
   transform: payload => ({
-    ...payload
+    ...payload,
     title: payload.title.trim()
   }),
   transformError: payload => ({
