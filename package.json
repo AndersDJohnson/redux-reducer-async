@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack",
     "lint": "eslint src",
+    "lint:md": "eslint --config .eslintrc-md.js **/*.md",
     "prepublish": "yarn test && yarn build",
     "precommit": "yarn test",
     "test": "yarn lint && yarn unit && codecov",
@@ -24,6 +25,7 @@
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
