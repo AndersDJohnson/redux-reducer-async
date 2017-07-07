@@ -226,6 +226,36 @@ describe('createReducer', () => {
       })
     })
   })
+
+  describe('transforms', () => {
+    const types = actionTypes(type)
+    const reducer = createReducer(type, {
+      transform: data => data + 1,
+      transformError: data => data - 1
+    })
+
+    it('transforms success', () => {
+      expect(reducer({}, {
+        type: types.success,
+        payload: 1
+      })).toEqual({
+        loading: false,
+        data: 2,
+        error: null
+      })
+    })
+
+    it('transforms error', () => {
+      expect(reducer({}, {
+        type: types.error,
+        error: true,
+        payload: 1
+      })).toEqual({
+        loading: false,
+        error: 0
+      })
+    })
+  })
 })
 
 describe('actionTypes', () => {

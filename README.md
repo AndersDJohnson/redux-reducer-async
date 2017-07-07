@@ -115,6 +115,22 @@ But can also be used to suppress suffixes (here undefined means use default):
 createReducer(actionTypes('MY_ACTION', undefined, '', ''))
 ```
 
+### Transforms
+
+As a shortcut to defining custom reducers, you can provide transform functions to manipulate only the payload, optionally in success and/or error cases:
+
+```js
+createReducer('MY_ACTION', {
+  transform: payload => ({
+    ...payload
+    title: payload.title.trim()
+  }),
+  transformError: payload => ({
+    ...payload,
+    message: `There was an error: ${payload.message}`
+  })
+})
+```
 
 [redux-promise-middleware]: https://github.com/pburtchaell/redux-promise-middleware
 [redux-promise]: https://github.com/acdlite/redux-promise
