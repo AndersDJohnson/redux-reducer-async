@@ -10,7 +10,13 @@ Standardize state schema with managed properties for loading, success, and error
 
 By default, we support the conventions of [`redux-promise-middleware`][redux-promise-middleware] and [FSA].
 
-So this:
+## Install
+
+```
+npm install --save redux-reducer-async
+```
+
+## Use
 
 ```js
 import createReducer from 'redux-reducer-async'
