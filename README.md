@@ -10,6 +10,8 @@ Standardize state schema with managed properties for loading, success, and error
 
 By default, we support the conventions of [`redux-promise-middleware`][redux-promise-middleware] and [FSA].
 
+Think of it as [`redux-actions`](https://redux-actions.js.org/) for asynchronous reducers.
+
 ## Install
 
 ```
