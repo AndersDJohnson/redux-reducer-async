@@ -14,9 +14,7 @@ Think of it as [`redux-actions`](https://redux-actions.js.org/) for asynchronous
 
 ## Install
 
-```
-npm install --save redux-reducer-async
-```
+[![npm install --save redux-reducer-async (copy)](https://copyhaste.com/i?t=npm%20install%20--save%20redux-reducer-async)](https://copyhaste.com/c?t=npm%20install%20--save%20redux-reducer-async "npm install --save redux-reducer-async (copy)")
 
 ## Use
 
