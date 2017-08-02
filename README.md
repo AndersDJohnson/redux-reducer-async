@@ -8,9 +8,11 @@
 Be DRY & reduce boilerplate.
 Standardize state schema with managed properties for loading, success, and error cases.
 
-By default, we support the conventions of [`redux-promise-middleware`][redux-promise-middleware] and [FSA].
-
 Think of it as [`redux-actions`](https://redux-actions.js.org/) for asynchronous reducers.
+
+Works with [Flux Standard Actions (FSA)][FSA].
+By default, supports the action type conventions of [`redux-promise-middleware`][redux-promise-middleware],
+but see [Custom Action Types](#custom-action-types) below for configuration to support [`redux-promise`][redux-promise].
 
 ## Install
 
