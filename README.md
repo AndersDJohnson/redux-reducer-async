@@ -61,7 +61,7 @@ import createReducer from 'redux-reducer-async'
 
 const myActionReducer = createReducer('MY_ACTION')
 
-(state = {}, action = {}) => {
+const reducer = (state = {}, action = {}) => {
   state = myActionReducer(state, action)
   // ...
   return state
