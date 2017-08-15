@@ -23,7 +23,7 @@ but see [Custom Action Types](#custom-action-types) below for configuration to s
 ```js
 import createReducer from 'redux-reducer-async'
 
-createReducer('MY_ACTION')
+const myActionReducer = createReducer('MY_ACTION')
 ```
 
 results in a reducer like this:
@@ -40,6 +40,31 @@ results in a reducer like this:
     default:
       return state
   }
+}
+```
+
+You can then mount it with [`combineReducers`](http://redux.js.org/docs/api/combineReducers.html):
+
+```js
+import { combineReducers } from 'redux'
+import createReducer from 'redux-reducer-async'
+
+const rootReducer = combineReducers({
+  myAction: createReducer('MY_ACTION')
+})
+```
+
+Or even call it manually in another reducuer:
+
+```js
+import createReducer from 'redux-reducer-async'
+
+const myActionReducer = createReducer('MY_ACTION')
+
+(state = {}, action = {}) => {
+  state = myActionReducer(state, action)
+  // ...
+  return state
 }
 ```
 
