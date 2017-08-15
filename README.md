@@ -54,7 +54,7 @@ const rootReducer = combineReducers({
 })
 ```
 
-Or even call it manually in another reducuer:
+Or even call it manually within another reducer (useful with [custom properties](#custom-properties) or [reducers](#custom-reducers)):
 
 ```js
 import createReducer from 'redux-reducer-async'
