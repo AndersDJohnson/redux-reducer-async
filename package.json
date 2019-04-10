@@ -1,6 +1,6 @@
 {
   "name": "redux-reducer-async",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
@@ -38,7 +38,7 @@
     "redux-promise-middleware": "^4.3.0",
     "webpack": "^3.0.0"
   },
-  "author": "Anders D. Johnson (https://andrz.me)",
+  "author": "Anders D. Johnson (https://andersdjohnson.com)",
   "repository": "AndersDJohnson/redux-reducer-async",
   "license": "MIT",
   "description": "Create redux reducers for async behaviors of multiple actions.",
